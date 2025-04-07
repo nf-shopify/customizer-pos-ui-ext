@@ -33,9 +33,9 @@ function combineCartItemsWithProductData(cartItems, productData) {
       options: variant?.options,
     };
   });
-  console.log("enrichedCartItems", JSON.stringify(enrichedCartItems));
-  console.log("enrichedCartItems", enrichedCartItems[0].options[0].name);
-  console.log("enrichedCartItems", enrichedCartItems[0].options[0].value);
+  // console.log("enrichedCartItems", JSON.stringify(enrichedCartItems));
+  // console.log("enrichedCartItems", enrichedCartItems[0].options[0].name);
+  // console.log("enrichedCartItems", enrichedCartItems[0].options[0].value);
   return enrichedCartItems;
 }
 
