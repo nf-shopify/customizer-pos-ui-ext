@@ -3,8 +3,8 @@
 client_id = "e73a09a71313f96539358c1d7d52d3f8"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
-name = "customizer-pos-ui-ext"
-handle = "customizer-pos-ui-ext"
+name = "Heals Warranty Selector"
+handle = "heals-warranty-selector"
 
 [build]
 include_config_on_deploy = true
@@ -20,4 +20,4 @@ scopes = ""
 redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
 
 [pos]
-embedded = false
+embedded = true
