@@ -75,7 +75,9 @@ function warrantyItemsToListComponent(items, api) {
     leftSide: {
       label: item?.displayName,
       image: [],
-      subtitle: [],
+      subtitle: [
+        { content: item?.price, color: "TextHighlight" },
+      ],
       badges: [],
     },
     rightSide: {
@@ -91,13 +93,12 @@ const Modal = () => {
   const [productData, setProductData] = useState([]);
   const [warrantyData, setWarrantyData] = useState([]);
   const [enrichedCartItems, setEnrichedCartItems] = useState([]);
-  const [selectedItem, setSelectedItem] = useState();
-  const [selectedWarranty, setSelectedWarranty] = useState();
 
   const warrantyItems = [
     { variantId: 40936738914374 },
     { variantId: 40936739012678 },
     { variantId: 46185421668605 },
+    { variantId: 46185421701373 },
     { variantId: 46185421734141 },
   ];
 
@@ -126,10 +127,10 @@ const Modal = () => {
     getWarrantyData();
   }, [productData]);
 
-  const listItemsList = lineItemsToListComponent(enrichedCartItems, api);
+  const listItems = lineItemsToListComponent(enrichedCartItems, api);
   const warrantyItemsList = warrantyItemsToListComponent(warrantyData, api);
   console.log("warrantyData", JSON.stringify(warrantyData));
-  console.log("listItemsList", JSON.stringify(listItemsList));
+  console.log("listItems", JSON.stringify(listItems));
   console.log("warrantyItemsList", JSON.stringify(warrantyItemsList));
 
   return (
@@ -137,7 +138,7 @@ const Modal = () => {
       <Screen name="Furniture Warranty" title="Furniture Warranty">
         <ScrollView>
           <Section title="Please select an item to add a warranty to">
-            <List data={listItemsList} imageDisplayStrategy="always" />
+            <List data={listItems} imageDisplayStrategy="always" />
           </Section>
         </ScrollView>
       </Screen>
